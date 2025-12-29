@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
+:root {
+  --noise: url("/noise.png");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Google Sans";
+  background-color: rgb(99, 25, 25);
+  /* background-color: bisque; */
+}
+nav {
+  padding: 20px 30px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  z-index: 999;
+}
+nav .icon {
+  font-size: 2vw;
+  font-weight: 900;
+  cursor: pointer;
+}
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  background: transparent;
+  border: none;
+  width: 30px;
+}
+
+.main {
+  background: var(--noise);
+  background-size: 100px;
+  animation-name: anim;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(3, jump-both);
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 100vh;
+}
+
+@keyframes anim {
+  from {
+    background-size: 100px;
+  }
+  to {
+    background-size: 150px;
+
+    /* background-size: 150px; */
+  }
+}
+
+h1 {
+  position: absolute;
+  /* inset: 0; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.name {
+  height: 75vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1,
+h1 * {
+  font-family: "Montserrat", sans-serif;
+  /* letter-spacing: 2px; */
+  font-size: 9vw;
+  color: black;
+  text-align: center;
+  font-weight: 900;
+  color: bisque;
+}
+
+.sep {
+  margin: 0 -48px;
+  font-size: 15vw;
+  font-weight: 700;
+}
+
+.intro {
+  font-size: 1vw;
+  font-weight: 500;
+  width: 20vw;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+}
+.hero-bottom-text {
+  width: max-content;
+  position: absolute;
+  right: 35px;
+  bottom: 30px;
+  /* transform: translate(-50%); */
+  font-size: 1vw;
+  font-weight: 500;
+  text-align: right;
+}
+
+.intro span {
+  display: inline-block;
+}
+.intro-line {
+  overflow: hidden;
+}
+
+.curtain {
+  position: fixed;
+  inset: 0;
+  clip-path: inset(0% 0% 0% 0%);
+  background-color: bisque;
+  z-index: 9999;
+}
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.next-section {
+  /* min-height: 100vh; */
+}
+
+.driven-by {
+  overflow: hidden;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  width: 0%;
+  left: 10%;
+  text-align: right;
+  font-weight: 900;
+  /* transform: translate(-50%, -50%); */
+  /* right: 100px;
+  left: 100px; */
+  /* padding: 0 100px; */
+  height: 2px;
+  background: black;
+}
+
+/* Next section */
+.next-section {
+  padding-left: 50px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.81) url("0.avif");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 200px;
+}
+.next-section-text {
+  color: white;
+  width: 30%;
+}
+.next-section-heading {
+  line-height: 90%;
+  padding: 30px 0px;
+}
+.next-section-para {
+  line-height: 140%;
+}
+.text-img-container {
+  padding: 50px 0px 70px 0;
+}
+.text-img-text {
+  display: inline-block;
+  position: relative;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 0px;
+  font-size: 10vh;
+  font-weight: 900;
+  color: white;
+  border-bottom: 1px solid white;
+  letter-spacing: -2.5px;
+  cursor: pointer;
+  opacity: 1;
+}
+.text-img-img {
+  clip-path: inset(50% 50% 50% 50%);
+  /* will-change: clip-path; */
+  /* transition: 1s; */
+  position: absolute;
+  /* z-index: 50; */
+  z-index: 49;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  filter: brightness(0.7);
+}
+.text-img-text:hover + .text-img-img {
+  z-index: 99;
+}
+/* When ANY text is hovered, dim ALL texts */
+.text-img-container:has(.text-img-text:hover) .text-img-text {
+  opacity: 0.5;
+  transition: opacity 0.5s;
+}
+
+/* But keep the hovered one fully visible */
+.text-img-container .text-img-text:hover {
+  opacity: 1 !important;
+}
+
+.first-section {
+  min-height: 100vh;
+  padding: 100px;
+}
+
+#revealText {
+  width: 65%;
+  font-size: 3vw;
+  color: rgb(185, 185, 185);
+}
