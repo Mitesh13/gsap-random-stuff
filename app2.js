@@ -27,22 +27,21 @@ const intro = document.querySelectorAll(".intro-line")
 console.log('intro.textContent', intro.innerText)
 
 
-// tl.to(".loading", {
-//   width: "20%",
-//   duration: 0.3,
-//   delay: 1
-// }).to(".loading", {
-//   width: "60%",
-//   duration: 1.2,
-// }).to(".loading", {
-//   width: "80%",
-//   duration: .3,
-// }).to('.curtain', {
-//   clipPath: "inset(0% 0% 100% 0%)",
-//   duration: 1,
-//   ease: "power4.inOut"
-// })
-tl.from("h1 span", {
+tl.to(".loading", {
+  width: "20%",
+  duration: 0.3,
+  delay: 1
+}).to(".loading", {
+  width: "60%",
+  duration: 1.2,
+}).to(".loading", {
+  width: "80%",
+  duration: .3,
+}).to('.curtain', {
+  clipPath: "inset(0% 0% 100% 0%)",
+  duration: 1,
+  ease: "power4.inOut"
+}).from("h1 span", {
   y: "100%",
   // duration: .3,
   ease: "power.inOut",
@@ -63,7 +62,7 @@ gsap.to("body", {
   background: "#f5f5dc",
   scrollTrigger: {
     trigger: ".first-section",
-    markers: true,
+    // markers: true,
     start: "top 59%",
     end: "top 48%",
     toggleActions: "play play reverse reverse",
